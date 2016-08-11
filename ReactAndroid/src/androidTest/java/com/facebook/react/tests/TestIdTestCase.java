@@ -52,12 +52,21 @@ public class TestIdTestCase extends ReactAppInstrumentationTestCase {
 
   public void testPropertyIsSetForViews() {
     for (String tag : viewTags) {
-      View viewWithTag = ReactTestHelper.getViewWithReactTestId(
+      View viewWithTag = ReactTestHelper.getViewWithReactTestIdUsingTag(
         getActivity().getRootView(),
         tag);
+
+        View viewWithResourceID = ReactTestHelper.getViewWithReactTestIdUsingID(
+          getActivity().getRootView(),
+          tag);
+
       assertNotNull(
           "View with testID tag " + tag + " was not found. Check TestIdTestModule.js.",
           viewWithTag);
+
+      assertNotNull(
+        "View with testID Resource ID " + tag + " was not found. Check TestIdTestModule.js.",
+        viewWithResourceID);
     }
   }
 }

@@ -173,8 +173,12 @@ public class ReactTestHelper {
    * Gets the view with a given react test ID in the UI hierarchy. React test ID is currently
    * propagated into view content description.
    */
-  public static View getViewWithReactTestId(View rootView, String testId) {
+  public static View getViewWithReactTestIdUsingTag(View rootView, String testId) {
     return findChild(rootView, hasTagValue(testId));
+  }
+
+  public static View getViewWithReactTestIdUsingID(View rootView, String testId) {
+    return findChild(rootView, hasResourceIDValue(testId));
   }
 
   public static String getTestId(View view) {
@@ -204,6 +208,16 @@ public class ReactTestHelper {
       public boolean apply(View view) {
         Object tag = view.getTag();
         return tag != null && tag.equals(tagValue);
+      }
+    };
+  }
+
+  private static Predicate<View> hasResourceIDValue(final String resourceIDValue) {
+    return new Predicate<View>() {
+      @Override
+      public boolean apply(View view) {
+        Object id = view.getId();
+        return id != null && id.equals(resourceIDValue);
       }
     };
   }

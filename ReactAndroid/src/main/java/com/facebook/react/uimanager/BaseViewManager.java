@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.facebook.react.R;
 import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import java.lang.reflect.Field;
 
@@ -56,9 +55,9 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
   @ReactProp(name = PROP_TRANSFORM)
   public void setTransform(T view, ReadableArray matrix) {
     if (matrix == null) {
-      resetTransformMatrix(view);
+      resetTransformProperty(view);
     } else {
-      setTransformMatrix(view, matrix);
+      setTransformProperty(view, matrix);
     }
   }
 
@@ -165,10 +164,8 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
     }
   }
 
-  private static void setTransformMatrix(View view, ReadableArray matrix) {
-    for (int i = 0; i < 16; i++) {
-      sTransformDecompositionArray[i] = matrix.getDouble(i);
-    }
+  private static void setTransformProperty(View view, ReadableArray transforms) {
+    TransformHelper.processTransform(transforms, sTransformDecompositionArray);
     MatrixMathHelper.decomposeMatrix(sTransformDecompositionArray, sMatrixDecompositionContext);
     view.setTranslationX(
         PixelUtil.toPixelFromDIP((float) sMatrixDecompositionContext.translation[0]));
@@ -181,7 +178,7 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
     view.setScaleY((float) sMatrixDecompositionContext.scale[1]);
   }
 
-  private static void resetTransformMatrix(View view) {
+  private static void resetTransformProperty(View view) {
     view.setTranslationX(PixelUtil.toPixelFromDIP(0));
     view.setTranslationY(PixelUtil.toPixelFromDIP(0));
     view.setRotation(0);

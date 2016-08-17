@@ -4,12 +4,16 @@ package com.facebook.react.uimanager;
 
 import android.graphics.Color;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.react.R;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.annotations.ReactProp;
+
+import java.lang.reflect.Field;
 
 /**
  * Base class that should be suitable for the majority of subclasses of {@link ViewManager}.
@@ -86,6 +90,14 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
   @ReactProp(name = PROP_TEST_ID)
   public void setTestId(T view, String testId) {
     view.setTag(testId);
+    try {
+      Class res = R.id.class;
+      Field field = res.getField(testId);
+      view.setId(field.getInt(null));
+      Log.i("View", "setID with resource id: " + testId  + " was called successfully");
+    } catch (Exception ex) {
+      Log.e("View", "setID", ex);
+      }
   }
 
   @ReactProp(name = PROP_ACCESSIBILITY_LABEL)

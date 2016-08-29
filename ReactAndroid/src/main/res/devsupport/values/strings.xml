@@ -21,5 +21,4 @@
   <string name="catalyst_dismiss_button" project="catalyst" translatable="false">Dismiss (ESC)</string>
   <string name="catalyst_reload_button" project="catalyst" translatable="false">Reload (R, R)</string>
   <string name="catalyst_copy_button" project="catalyst" translatable="false">Copy</string>
-  <item name="mikejahn" type="id" />
 </resources>

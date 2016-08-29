@@ -4,16 +4,13 @@ package com.facebook.react.uimanager;
 
 import android.graphics.Color;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.facebook.react.R;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.annotations.ReactProp;
 
-import java.lang.reflect.Field;
 
 /**
  * Base class that should be suitable for the majority of subclasses of {@link ViewManager}.

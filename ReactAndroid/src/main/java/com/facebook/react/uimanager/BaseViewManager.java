@@ -90,13 +90,6 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
   @ReactProp(name = PROP_TEST_ID)
   public void setTestId(T view, String testId) {
     view.setTag(testId);
-    try {
-      Class res = R.id.class;
-      Field field = res.getField(testId);
-      view.setId(field.getInt(null));
-    } catch (Exception ex) {
-      Log.e("View", "setID", ex);
-      }
   }
 
   @ReactProp(name = PROP_ACCESSIBILITY_LABEL)

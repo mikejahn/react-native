@@ -94,7 +94,6 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
       Class res = R.id.class;
       Field field = res.getField(testId);
       view.setId(field.getInt(null));
-      Log.i("View", "setID with resource id: " + testId  + " was called successfully");
     } catch (Exception ex) {
       Log.e("View", "setID", ex);
       }

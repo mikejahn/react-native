@@ -260,7 +260,7 @@ const View = React.createClass({
      * > This disables the 'layout-only view removal' optimization for this view!
      */
     testID: PropTypes.string,
-
+    accessibilityIdentifier: PropTypes.string,
     /**
      * For most touch interactions, you'll simply want to wrap your component in
      * `TouchableHighlight` or `TouchableOpacity`. Check out `Touchable.js`,

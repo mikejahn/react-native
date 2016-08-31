@@ -241,7 +241,8 @@ var TouchableHighlight = React.createClass({
         onResponderMove={this.touchableHandleResponderMove}
         onResponderRelease={this.touchableHandleResponderRelease}
         onResponderTerminate={this.touchableHandleResponderTerminate}
-        testID={this.props.testID}>
+        testID={this.props.testID}
+        accessibilityIdentifier={this.props.accessibilityIdentifier}>
         {React.cloneElement(
           onlyChild(this.props.children),
           {

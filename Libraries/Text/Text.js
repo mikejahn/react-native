@@ -151,6 +151,7 @@ const Text = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: React.PropTypes.string,
+    accessibilityIdentifier: React.PropTypes.string,
     /**
      * Specifies whether fonts should scale to respect Text Size accessibility setting on iOS. The
      * default is `true`.

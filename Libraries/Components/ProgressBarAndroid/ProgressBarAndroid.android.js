@@ -95,6 +95,8 @@ var ProgressBarAndroid = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: ReactPropTypes.string,
+    accessibilityIdentifier: ReactPropTypes.string,
+
   },
 
   getDefaultProps: function() {

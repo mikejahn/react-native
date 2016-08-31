@@ -147,6 +147,7 @@ var WebView = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: PropTypes.string,
+    accessibilityIdentifier: PropTypes.string,
 
     /**
      * Determines whether HTML5 audio & videos require the user to tap before they can
@@ -228,6 +229,7 @@ var WebView = React.createClass({
         onLoadingFinish={this.onLoadingFinish}
         onLoadingError={this.onLoadingError}
         testID={this.props.testID}
+        accessibilityIdentifier={this.props.accessibilityIdentifier}
         mediaPlaybackRequiresUserAction={this.props.mediaPlaybackRequiresUserAction}
       />;
 

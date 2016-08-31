@@ -45,6 +45,7 @@ var SwitchAndroid = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: PropTypes.string,
+    accessibilityIdentifier: ReactPropTypes.string,
   },
 
   getDefaultProps: function() {
@@ -76,6 +77,7 @@ var SwitchAndroid = React.createClass({
         on={this.props.value}
         onChange={this._onChange}
         testID={this.props.testID}
+        accessibilityIdentifier={this.props.accessibilityIdentifier}
         onStartShouldSetResponder={() => true}
         onResponderTerminationRequest={() => false}
       />

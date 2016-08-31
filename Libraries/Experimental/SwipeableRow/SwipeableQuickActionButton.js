@@ -44,6 +44,7 @@ const SwipeableQuickActionButton = React.createClass({
     onPress: PropTypes.func,
     style: View.propTypes.style,
     testID: PropTypes.string,
+    accessibilityIdentifier: PropTypes.string,
     text: PropTypes.string,
     textStyle: Text.propTypes.style,
   },
@@ -57,6 +58,7 @@ const SwipeableQuickActionButton = React.createClass({
       <TouchableHighlight
         onPress={this.props.onPress}
         testID={this.props.testID}
+        accessibilityIdentifier={this.props.accessibilityIdentifier}
         underlayColor="transparent">
         <View style={this.props.style}>
           <Image

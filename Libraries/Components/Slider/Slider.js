@@ -127,6 +127,7 @@ var Slider = React.createClass({
      * Used to locate this view in UI automation tests.
      */
     testID: PropTypes.string,
+    accessibilityIdentifier: ReactPropTypes.string,
   },
 
   getDefaultProps: function() : any {

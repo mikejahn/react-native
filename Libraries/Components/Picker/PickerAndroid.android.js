@@ -49,6 +49,7 @@ var PickerAndroid = React.createClass({
     onValueChange: ReactPropTypes.func,
     prompt: ReactPropTypes.string,
     testID: ReactPropTypes.string,
+    accessibilityIdentifier: ReactPropTypes.string,
   },
 
   getInitialState: function() {
@@ -93,6 +94,7 @@ var PickerAndroid = React.createClass({
       prompt: this.props.prompt,
       selected: this.state.initialSelectedIndex,
       testID: this.props.testID,
+      accessibilityIdentifier: ReactPropTypes.string,
       style: [styles.pickerAndroid, this.props.style],
     };
 

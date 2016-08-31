@@ -24,6 +24,7 @@ ReactNativeViewAttributes.UIView = {
   accessibilityTraits: true,
   importantForAccessibility: true,
   testID: true,
+  accessibilityIdentifier: true,
   renderToHardwareTextureAndroid: true,
   shouldRasterizeIOS: true,
   onLayout: true,

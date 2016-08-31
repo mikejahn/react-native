@@ -44,8 +44,7 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
    * Used to locate views in end-to-end (UI) tests.
    */
   public static final String PROP_TEST_ID = "testID";
-  public static final String PROP_ACCESSIBILITY_IDENTIFIER = "accessibilityidentifier";
-
+  public static final String PROP_ACCESSIBILITY_IDENTIFIER = "accessibilityIdentifier";
 
   private static MatrixMathHelper.MatrixDecompositionContext sMatrixDecompositionContext =
       new MatrixMathHelper.MatrixDecompositionContext();

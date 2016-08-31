@@ -44,6 +44,8 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
    * Used to locate views in end-to-end (UI) tests.
    */
   public static final String PROP_TEST_ID = "testID";
+  public static final String PROP_ACCESSIBILITY_IDENTIFIER = "accessibilityidentifier";
+
 
   private static MatrixMathHelper.MatrixDecompositionContext sMatrixDecompositionContext =
       new MatrixMathHelper.MatrixDecompositionContext();
@@ -87,6 +89,24 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
     view.setLayerType(useHWTexture ? View.LAYER_TYPE_HARDWARE : View.LAYER_TYPE_NONE, null);
   }
 
+  @ReactProp(name = PROP_ACCESSIBILITY_IDENTIFIER)
+  public void setAccessibilityIdentifier(T view, String accessibilityIdentifier) {
+
+    if (view.getId() != 0) {
+      return;
+    }
+
+    view.setTag(accessibilityIdentifier);
+    try {
+      Class res = R.id.class;
+      Field field = res.getField(accessibilityIdentifier);
+      view.setId(field.getInt(null));
+      Log.i("View", "setAccessibilityIdentifier with resource id: " + accessibilityIdentifier  + " was called successfully");
+    } catch (Exception ex) {
+      Log.e("View", "setAccessibilityIdentifier", ex);
+    }
+  }
+
   @ReactProp(name = PROP_TEST_ID)
   public void setTestId(T view, String testId) {
     view.setTag(testId);
@@ -97,7 +117,7 @@ public abstract class BaseViewManager<T extends View, C extends LayoutShadowNode
       Log.i("View", "setID with resource id: " + testId  + " was called successfully");
     } catch (Exception ex) {
       Log.e("View", "setID", ex);
-      }
+    }
   }
 
   @ReactProp(name = PROP_ACCESSIBILITY_LABEL)

@@ -222,7 +222,7 @@ var TouchableNativeFeedback = React.createClass({
       accessibilityTraits: this.props.accessibilityTraits,
       children,
       testID: this.props.testID,
-      accessibilityIdentifier=this.props.accessibilityIdentifier,
+      accessibilityIdentifier: this.props.accessibilityIdentifier,
       onLayout: this.props.onLayout,
       hitSlop: this.props.hitSlop,
       onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,

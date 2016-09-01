@@ -608,7 +608,7 @@ const TextInput = React.createClass({
         accessibilityLabel={props.accessibilityLabel}
         accessibilityTraits={props.accessibilityTraits}
         testID={props.testID}>
-        accessibilityIdentifier={this.props.accessibilityIdentifier}
+        accessibilityIdentifier={props.accessibilityIdentifier}
         {textContainer}
       </TouchableWithoutFeedback>
     );
@@ -681,8 +681,8 @@ const TextInput = React.createClass({
         accessible={this.props.accessible}
         accessibilityLabel={this.props.accessibilityLabel}
         accessibilityComponentType={this.props.accessibilityComponentType}
-        testID={this.props.testID}>
-        accessibilityIdentifier={this.props.accessibilityIdentifier}
+        testID={this.props.testID}
+        accessibilityIdentifier={this.props.accessibilityIdentifier}>
         {textContainer}
       </TouchableWithoutFeedback>
     );

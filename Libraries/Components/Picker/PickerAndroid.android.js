@@ -94,7 +94,7 @@ var PickerAndroid = React.createClass({
       prompt: this.props.prompt,
       selected: this.state.initialSelectedIndex,
       testID: this.props.testID,
-      accessibilityIdentifier: ReactPropTypes.string,
+      accessibilityIdentifier: this.props.accessibilityIdentifier,
       style: [styles.pickerAndroid, this.props.style],
     };
 

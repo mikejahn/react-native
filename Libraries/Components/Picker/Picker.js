@@ -105,7 +105,7 @@ var Picker = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: React.PropTypes.string,
-    accessibilityIdentifier: ReactPropTypes.string,
+    accessibilityIdentifier: React.PropTypes.string,
   },
 
   render: function() {
@@ -143,7 +143,7 @@ Picker.Item = React.createClass({
      * Used to locate the item in end-to-end tests.
      */
     testID: React.PropTypes.string,
-    accessibilityIdentifier: ReactPropTypes.string,
+    accessibilityIdentifier: React.PropTypes.string,
   },
 
   render: function() {

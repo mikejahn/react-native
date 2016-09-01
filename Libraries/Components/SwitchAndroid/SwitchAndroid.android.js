@@ -45,7 +45,7 @@ var SwitchAndroid = React.createClass({
      * Used to locate this view in end-to-end tests.
      */
     testID: PropTypes.string,
-    accessibilityIdentifier: ReactPropTypes.string,
+    accessibilityIdentifier: PropTypes.string,
   },
 
   getDefaultProps: function() {
